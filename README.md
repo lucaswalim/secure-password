@@ -1,4 +1,4 @@
-<h2 align="center">
+<h2>
   Senha Segura
 </h2>
 
