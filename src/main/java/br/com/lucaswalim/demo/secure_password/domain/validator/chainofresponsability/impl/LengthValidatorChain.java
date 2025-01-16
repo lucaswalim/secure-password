@@ -14,7 +14,8 @@ public class LengthValidatorChain implements PasswordValidator {
     @Override
     public List<String> validate(String password) {
         List<String> errors = new ArrayList<>();
-        if (password.length() < 8) {
+
+        if (password == null || password.length() < 8) {
             errors.add("A senha deve possuir pelo menos 8 caracteres");
         }
 

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class LowerCaseValidatorStrategy implements PasswordValidator {
     @Override
     public boolean validate(String password) {
-        return password.chars().anyMatch(Character::isLowerCase);
+        return password != null && password.chars().anyMatch(Character::isLowerCase);
     }
 
     @Override

@@ -8,7 +8,7 @@ public class UpperCaseValidatorStrategy implements PasswordValidator {
 
     @Override
     public boolean validate(String password) {
-        return password.chars().anyMatch(Character::isUpperCase);
+        return password != null && password.chars().anyMatch(Character::isUpperCase);
     }
 
     @Override

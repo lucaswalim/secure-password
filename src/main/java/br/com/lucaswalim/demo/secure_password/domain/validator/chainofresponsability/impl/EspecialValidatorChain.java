@@ -9,12 +9,14 @@ import java.util.List;
 @Component
 public class EspecialValidatorChain implements PasswordValidator {
 
+    public static final String ESPECIAL = ".*[!@#$%^&*(),.?\":{}|<>\\[\\]\\\\/`~'_+=-].*";
     private PasswordValidator nextValidator;
 
     @Override
     public List<String> validate(String password) {
         List<String> errors = new ArrayList<>();
-        if (!password.matches(".*[!@#$%^&*(),.?\":{}|<>\\[\\]\\\\/`~'_+=-].*")) {
+
+        if (password == null || !password.matches(ESPECIAL)) {
             errors.add("A senha deve possuir pelo menos 1 caractere ESPECIAL");
         }
         if (nextValidator != null) {

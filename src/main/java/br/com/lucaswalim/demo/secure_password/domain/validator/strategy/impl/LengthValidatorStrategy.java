@@ -8,7 +8,7 @@ public class LengthValidatorStrategy implements PasswordValidator {
 
     @Override
     public boolean validate(String password) {
-        return password.length() >= 8;
+        return password != null && password.length() >= 8;
     }
 
     @Override

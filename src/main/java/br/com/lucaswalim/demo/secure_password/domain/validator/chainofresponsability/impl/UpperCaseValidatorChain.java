@@ -8,17 +8,21 @@ import java.util.List;
 
 @Component
 public class UpperCaseValidatorChain implements PasswordValidator {
+    public static final String UPER = ".*[A-Z].*";
     private PasswordValidator nextValidator;
 
     @Override
     public List<String> validate(String password) {
         List<String> errors = new ArrayList<>();
-        if (!password.matches(".*[A-Z].*")) {
+
+        if (password == null || !password.matches(UPER)) {
             errors.add("A senha deve possuir pelo menos 1 caractere MAIÚSCULO");
         }
+
         if (nextValidator != null) {
             errors.addAll(nextValidator.validate(password));
         }
+
         return errors;
     }
 

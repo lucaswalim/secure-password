@@ -9,17 +9,21 @@ import java.util.List;
 @Component
 public class LowerCaseValidatorChain implements PasswordValidator {
 
+    public static final String LOWER = ".*[a-z].*";
     private PasswordValidator nextValidator;
 
     @Override
     public List<String> validate(String password) {
         List<String> errors = new ArrayList<>();
-        if (!password.matches(".*[a-z].*")) {
+
+        if (password == null || !password.matches(LOWER)) {
             errors.add("A senha deve possuir pelo menos 1 caractere MINÙSUCLO");
         }
+
         if (nextValidator != null) {
             errors.addAll(nextValidator.validate(password));
         }
+
         return errors;
     }
 

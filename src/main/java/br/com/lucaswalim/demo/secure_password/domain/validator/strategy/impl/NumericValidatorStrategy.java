@@ -8,7 +8,7 @@ public class NumericValidatorStrategy implements PasswordValidator {
 
     @Override
     public boolean validate(String password) {
-        return password.chars().anyMatch(Character::isDigit);
+        return password != null && password.chars().anyMatch(Character::isDigit);
     }
 
     @Override

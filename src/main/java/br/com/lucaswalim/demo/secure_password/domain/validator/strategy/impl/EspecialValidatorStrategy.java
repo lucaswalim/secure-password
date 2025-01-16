@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class EspecialValidatorStrategy implements PasswordValidator {
     @Override
     public boolean validate(String password) {
-        return password.chars().anyMatch(ch -> !Character.isLetterOrDigit(ch));
+        return password != null && password.chars().anyMatch(ch -> !Character.isLetterOrDigit(ch));
     }
 
     @Override
