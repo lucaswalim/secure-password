@@ -2,7 +2,7 @@
   Senha Segura
 </h2>
 
-Resolução do desafio proposto pelo repositorio Backend Brasil, para fins de estudo, repasses e consultas futuras.
+Resolução do desafio proposto pelo repositorio Backend Brasil, aplicando abordagens de design patterns diferentes para fins de estudo, repasses e consultas futuras.
 
 ## :rocket: Tecnologias utilizadas
 * Java
